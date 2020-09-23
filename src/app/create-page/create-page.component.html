@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="form-title">
+    Создать заявку
+  </div>
+
+  <div class="form-wrapper">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div class="form-group">
+        <label for="orderNumber">Номер заказа</label>
+        <input formControlName="orderNumber" type="number" class="form-control" id="orderNumber">
+        <small
+          *ngIf="form.get('orderNumber').touched && form.get('orderNumber').invalid"
+          class="form-text text-danger"
+        >Поле не может быть пустым</small>
+      </div>
+      <div class="form-group">
+        <label for="companyName">Название фирмы клиента</label>
+        <input formControlName="companyName" type="text" class="form-control" id="companyName">
+        <small
+          *ngIf="form.get('companyName').touched && form.get('companyName').invalid"
+          class="form-text text-danger"
+        >Поле не может быть пустым</small>
+      </div>
+
+      <div class="form-group">
+        <label for="carrier">ФИО перевозчика</label>
+        <input formControlName="carrier" type="text" class="form-control" id="carrier">
+        <small
+          *ngIf="form.get('carrier').touched && form.get('carrier').invalid"
+          class="form-text text-danger"
+        >Поле не может быть пустым</small>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Контактный телефон перевозчика</label>
+        <input formControlName="phone" type="number" class="form-control" id="phone">
+        <small
+          *ngIf="form.get('phone').touched && form.get('phone').invalid"
+          class="form-text text-danger"
+        >Поле не может быть пустым</small>
+      </div>
+
+      <div class="form-group">
+        <label for="comments">Комментарии</label>
+        <textarea formControlName="comments" class="form-control" id="comments" rows="2"></textarea>
+        <small
+          *ngIf="form.get('comments').touched && form.get('comments').invalid"
+          class="form-text text-danger"
+        >Поле не может быть пустым</small>
+      </div>
+
+      <div class="form-group">
+        <label for="ATI">ATI код сети перевозчика</label>
+        <input formControlName="ATI" type="number" class="form-control" id="ATI">
+        <small
+          *ngIf="form.get('ATI').touched && form.get('ATI').invalid"
+          class="form-text text-danger"
+        >Поле не может быть пустым</small>
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="form.invalid || submitted"
+      >Создать
+      </button>
+    </form>
+  </div>
+
+</div>

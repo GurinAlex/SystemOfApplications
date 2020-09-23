@@ -21,6 +21,7 @@
     "@angular/router": "~10.1.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
+    "uuid": "^8.3.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

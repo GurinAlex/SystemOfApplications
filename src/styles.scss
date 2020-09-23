@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+
+// == Mixins == //
+@mixin font-lato {
+  font-family: 'Lato', sans-serif;
+}
+
+@mixin font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+// !== Mixins == //
+
+.text-danger {
+  color: rgb(255,52,52);
+}
+
+.form-wrapper {
+  margin: 2rem auto;
+  width: 90%;
+}
+.form-title {
+  @include font-montserrat;
+  font-size: 27px;
+  text-align: center;
+  margin: 2rem auto 0 auto;
+}
+.form-group {
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  textarea {
+    resize: none;
+  }
+}
+
+.row {
+  margin-left: 2px;
+  display: flex;
+}
+.row-between {
+  width: 25%;
+  justify-content: space-between;
+}
+
+ul {
+  list-style: none;
+}

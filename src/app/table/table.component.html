@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="main__title">
+    Фильтры для списка
+  </div>
+  <div class="main__filter">
+    <form [formGroup]="filter" (ngSubmit)="addNameFilter()">
+      <div class="form-group">
+        <label for="nameFilter">Поиск по названию фирмы</label>
+        <input formControlName="name" type="text" id="nameFilter" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="countSelect">Количество элементов на странице</label>
+        <select formControlName="itemsCount" class="form-control" id="countSelect">
+          <option>5</option>
+          <option>10</option>
+          <option>20</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Применить</button>
+    </form>
+  </div>
+
+  <div class="main__title">
+    Таблица заявок
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Дата полуения</th>
+      <th scope="col">Название фирмы</th>
+      <th scope="col">ATI перевозчика</th>
+      <th scope="col">Действие</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let post of paginatorService.chunkList; let idx = index">
+      <th scope="row">{{idx + 1}}</th>
+      <td>{{post.date | date: 'mediumDate'}}</td>
+      <td>{{post.companyName}}</td>
+      <td><a [href]="post.ATI">{{post.ATI}}</a></td>
+      <td><a [routerLink]="['/post', post.id]" class="btn btn-primary">Просмотр</a></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <app-paginator *ngIf="paginatorService.posts && paginatorService.posts.length > itemsOnPage"></app-paginator>
+</div>
+

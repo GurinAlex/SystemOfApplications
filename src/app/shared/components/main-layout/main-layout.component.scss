@@ -1,0 +1,15 @@
+@import "src/styles";
+
+.title {
+  @include font-montserrat;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.yeti {
+  color: rgb(34,189,205);
+}
+
+.crab {
+  color: rgb(255,52,52)
+}

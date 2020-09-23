@@ -1,0 +1,18 @@
+<div class="wrapper">
+  <ul class="row">
+    <li>
+      <button (click)="paginationService.changePage('reduce')"><</button>
+    </li>
+    <li *ngFor="let num of paginationService.listPages">
+      <a
+        (click)="paginationService.changePage(null, num)"
+        [ngClass]="{
+          active: num === paginationService.currentPage
+          }"
+      >{{num}}</a>
+    </li>
+    <li>
+      <button (click)="paginationService.changePage('increase')"> > </button>
+    </li>
+  </ul>
+</div>
