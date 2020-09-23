@@ -28,18 +28,19 @@
 
 Для некоторой оптимизации добавлено свойство submitted, которому в момент отправки формы на сервер присваивается значение true, что позволяет избежать повторного запроса на сервер пока отправка формы не будет завершена. После получения ответа с сервера свойство снова возвращается в значене false и кнопка становится активной.
 
-## Build
+## Как я вижу API проекта
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### GET/?companyName=""
+Получение всех заявок с возможностью фильтрации по названию компании
 
-## Running unit tests
+### POST/application
+Создание записи
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### DELETE/id
+Удаление записи по id
 
-## Running end-to-end tests
+### PUT/id
+Изменение существующей записи по id.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### GET/application/id
+Получение записи по id
