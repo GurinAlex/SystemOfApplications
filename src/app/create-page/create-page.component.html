@@ -33,7 +33,11 @@
 
       <div class="form-group">
         <label for="phone">Контактный телефон перевозчика</label>
-        <input formControlName="phone" type="number" class="form-control" id="phone">
+        <input
+          formControlName="phone"
+          type="text" prefix="+7" mask="(000) 000 00 00"
+          class="form-control"
+          id="phone">
         <small
           *ngIf="form.get('phone').touched && form.get('phone').invalid"
           class="form-text text-danger"

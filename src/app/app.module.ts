@@ -2,6 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {LOCALE_ID, NgModule} from '@angular/core';
 import {registerLocaleData} from '@angular/common';
 import ruLocale from '@angular/common/locales/ru';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
 
 import {AppComponent} from './app.component';
 import {TableComponent} from './table/table.component';
@@ -31,7 +32,8 @@ registerLocaleData(ruLocale, 'ru');
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'ru' }],
   bootstrap: [AppComponent]
